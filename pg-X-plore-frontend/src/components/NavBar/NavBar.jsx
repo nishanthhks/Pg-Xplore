@@ -45,7 +45,7 @@ export default function NavBar() {
         </div>
       </nav>
       <section className={open ? "side-bar visible" : "side-bar"}>
-      {/* <section className="side-bar"> */}
+        {/* <section className="side-bar"> */}
         <a href="/" className="links">
           home
         </a>
