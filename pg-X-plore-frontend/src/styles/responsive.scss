@@ -1,0 +1,31 @@
+/* Styles here will apply to screens 
+that are --px wide or smaller */
+// * desktop first approach
+
+// apply to <= 1280px - desktop-laptop
+@mixin xl {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+// apply to <= 1024px - larg-tablet
+@mixin lg {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+// apply to <= 768px - small-tablet
+@mixin md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// apply to <= 640px - mobile
+@mixin sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}

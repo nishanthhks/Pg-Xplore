@@ -1,0 +1,20 @@
+@import "./responsive.scss";
+
+.layout {
+  // height: 100%;
+  top: 0px;
+  position: relative;
+
+  @include xl {
+    background-color: red;
+  }
+  @include lg {
+    background-color: blue;
+  }
+  @include md {
+    background-color: green;
+  }
+  @include sm {
+    background-color: yellow;
+  }
+}
