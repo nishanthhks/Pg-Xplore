@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./SearchBar.scss";
 import Search from "../../assets/icons/Search";
 
-const types = ["stay", "rent"];
 export default function SearchBar() {
   const [searchData, setSearchData] = useState({
     type: "stay",
@@ -10,6 +9,7 @@ export default function SearchBar() {
     minPrice: 0,
     maxprice: 0,
   });
+  const types = ["stay", "rent"];
 
   const switchType = (val) => {
     setSearchData((prev) => ({ ...prev, type: val }));

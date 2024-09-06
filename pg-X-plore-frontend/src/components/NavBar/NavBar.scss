@@ -23,7 +23,7 @@ nav {
   @include md {
     justify-content: space-between;
   }
-  @include sm{
+  @include sm {
     margin: 20px 10px 0px 10px;
   }
 
@@ -73,7 +73,7 @@ nav {
 .side-bar {
   display: flex;
   position: fixed;
-  right: -300px;
+  right: -300px; // Hidden offscreen
   top: 100px;
   background-color: rgb(255, 255, 255);
   border: 2px solid black;
@@ -83,12 +83,18 @@ nav {
   align-items: center;
   padding: 20px 30px;
 
-  transition: right 0.5s ease; 
+  /* Ensure the transition works when changing 'right' */
+  // transition: right 0.5s ease;
 }
 
 .visible {
-    right: 10px; 
-    z-index: 1000;
+  right: 10px;
+  z-index: 1000;
+  transition: right 0.5s ease;
 }
 
-
+.not-visible {
+  right: -300px;
+  z-index: 1000;
+  transition: right 0.5s ease;
+}

@@ -4,6 +4,7 @@ import "./NavBar.scss";
 
 import Menu from "../../assets/icons/Menu";
 import X from "../../assets/icons/X";
+
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
@@ -44,7 +45,7 @@ export default function NavBar() {
           {open ? <X /> : <Menu />}
         </div>
       </nav>
-      <section className={open ? "side-bar visible" : "side-bar"}>
+      <section className={`side-bar ${open ? "visible" : "not-visible"}`}>
         {/* <section className="side-bar"> */}
         <a href="/" className="links">
           home

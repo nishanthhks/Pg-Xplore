@@ -12,7 +12,9 @@
     width: 55%;
   }
   @include md {
-    width: 70%;
+    width: 80%;
+    left: 0px;
+    margin: 0 auto;
   }
   @include sm{
     left: 0px;

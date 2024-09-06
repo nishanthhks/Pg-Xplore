@@ -1,0 +1,130 @@
+@import "../../styles/responsive.scss";
+.single-page {
+  width: 100%;
+  background-color: #ffffff;
+  height: 85dvh;
+  display: flex;
+  position: relative;
+  top: 30px;
+  gap: 10px;
+  padding: 10px 100px;
+  gap: 10px;
+
+  @include lg {
+    padding: 10px 50px;
+  }
+
+  @include md {
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 10px;
+    height: auto;
+  }
+
+  .left-container {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include md {
+      width: 100%;
+    }
+
+    .image-wrapper {
+      flex: 5;
+      background-color: #ddd;
+      border-radius: 5px;
+
+      @include md {
+        flex: initial;
+        height: 300px;
+      }
+    }
+
+    .title {
+      flex: 2;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+
+      @include md {
+        flex: initial;
+        height: 100px;
+      }
+    }
+
+    .description {
+      flex: 3;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      @include md {
+        flex: initial;
+
+        height: 200px;
+      }
+    }
+  }
+
+  .right-container {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include md {
+      width: 100%;
+    }
+
+    .general-details {
+      flex: 4;
+      background-color: #e8e8e8;
+      border-radius: 5px;
+
+      @include md {
+        flex: initial;
+        height: 200px;
+      }
+    }
+
+    .room-details {
+      flex: 1;
+      background-color: #dcdcdc;
+      border-radius: 5px;
+
+      @include md {
+        flex: initial;
+        height: 100px;
+      }
+    }
+
+    .rear-places {
+      flex: 1;
+      background-color: #c0c0c0;
+      border-radius: 5px;
+
+      @include md {
+        flex: initial;
+        height: 150px;
+      }
+    }
+
+    .location {
+      flex: 5;
+      background-color: #b0b0b0;
+      border-radius: 5px;
+
+      @include md {
+        flex: initial;
+        height: 400px;
+      }
+    }
+  }
+}
