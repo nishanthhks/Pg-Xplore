@@ -11,7 +11,7 @@
   gap: 10px;
 
   @include lg {
-    padding: 10px 50px;
+    padding: 10px 20px;
   }
 
   @include md {
@@ -23,7 +23,7 @@
 
   .left-container {
     width: 50%;
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -33,12 +33,17 @@
 
     @include md {
       width: 100%;
+      // height: 100%;
     }
 
     .image-wrapper {
-      flex: 5;
-      background-color: #ddd;
+      flex: 4;
+      background-color: #e9c9c9;
       border-radius: 5px;
+      max-height: 50%;
+      
+      
+      
 
       @include md {
         flex: initial;
@@ -46,25 +51,20 @@
       }
     }
 
-    .title {
-      flex: 2;
-      background-color: #f0f0f0;
-      border-radius: 5px;
-
-      @include md {
-        flex: initial;
-        height: 100px;
-      }
-    }
-
     .description {
-      flex: 3;
+      flex: 5;
+    
       background-color: #e0e0e0;
       border-radius: 5px;
+      padding: 10px 30px;
+      font-size: clamp(0.60rem, 1vw, 0.9rem);
+
+
+
       @include md {
         flex: initial;
-
-        height: 200px;
+        font-size: 0.9rem;
+        // height: 200px;
       }
     }
   }
@@ -83,43 +83,11 @@
       width: 100%;
     }
 
-    .general-details {
-      flex: 4;
-      background-color: #e8e8e8;
-      border-radius: 5px;
-
-      @include md {
-        flex: initial;
-        height: 200px;
-      }
-    }
-
-    .room-details {
-      flex: 1;
-      background-color: #dcdcdc;
-      border-radius: 5px;
-
-      @include md {
-        flex: initial;
-        height: 100px;
-      }
-    }
-
-    .rear-places {
-      flex: 1;
-      background-color: #c0c0c0;
-      border-radius: 5px;
-
-      @include md {
-        flex: initial;
-        height: 150px;
-      }
-    }
-
     .location {
       flex: 5;
       background-color: #b0b0b0;
       border-radius: 5px;
+      position: relative;
 
       @include md {
         flex: initial;
@@ -128,3 +96,136 @@
     }
   }
 }
+
+.icon {
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.heading {
+  flex: 2;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px 30px;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include lg {
+    flex: 2;
+  }
+
+  @include md {
+    flex: initial;
+    // height: 100px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(213, 213, 213);
+    width: 50%;
+    padding: 0px 10px;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(213, 213, 213);
+    width: 25%;
+    // padding: 0;
+
+    img {
+      object-fit: cover;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.general-details {
+  
+  flex: 4;
+  background-color: #e8e8e8;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 30px;
+
+
+
+  @include md {
+    flex: initial;
+    height: 200px;
+  }
+
+  .general-list {
+    display: flex;
+    align-content: center;
+    // background-color: yellow;
+  }
+}
+
+.room-details {
+  flex: 1;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+
+  .list-comtainer {
+    display: flex;
+    justify-content: space-between;
+
+    .room-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-color: yellow;
+    }
+  }
+
+  @include md {
+    flex: initial;
+    height: 100px;
+  }
+}
+
+.near-places-details {
+  flex: 1;
+  background-color: #e8e8e8;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  padding: 10px 30px;
+  .place-container {
+    display: flex;
+
+    justify-content: space-between;
+
+    @include md {
+      flex: initial;
+      height: 50px;
+    }
+
+    .place-list {
+      display: flex;
+      align-content: center;
+      // background-color: yellow;
+    }
+  }
+}
+

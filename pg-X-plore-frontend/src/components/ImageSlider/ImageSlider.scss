@@ -1,0 +1,58 @@
+@import "../../styles/responsive.scss";
+
+.slider-container {
+  position: relative;
+  //   background-color: rgb(255, 255, 255);
+  height: clamp(100px, 100%, 100%);
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  height: 100%;
+
+  .big-image {
+    flex: 2;
+    object-fit: cover;
+    position: relative;
+
+    .arrow{
+        position: absolute;
+        cursor: pointer;
+
+    }
+  }
+
+  .small-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    object-fit: cover;
+
+    img {
+      height: 90px;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+// .full-slider {
+    
+//     position: relative;
+
+//     .arrow {
+//       cursor: pointer;
+//       width: 30px;
+//       height: 30px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       transform: rotate(90deg); /* Rotate arrow to point left or right */
+//     }
+// }

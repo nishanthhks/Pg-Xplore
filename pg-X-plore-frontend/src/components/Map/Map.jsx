@@ -5,7 +5,13 @@ import "leaflet/dist/leaflet.css";
 import { Link } from "react-router-dom";
 
 export default function Map({ data }) {
-  const position = [52.4862, -1.8904];
+  let position = [52.4862, -1.8904];
+
+  let isSingle = Array.isArray(data);
+  if (!isSingle) {
+    position = [data.latitude, data.longitude];
+  }
+  
   return (
     <>
       <MapContainer
@@ -17,9 +23,14 @@ export default function Map({ data }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {data.map((item) => {
-          return <Pin key={item.id} item={item} />; // Added a key prop for better performance
-        })}
+
+        {Array.isArray(data) ? (
+          data.map((item) => {
+            return <Pin key={item.id} item={item} />;
+          })
+        ) : (
+          <Pin item={data} />
+        )}
       </MapContainer>
     </>
   );
