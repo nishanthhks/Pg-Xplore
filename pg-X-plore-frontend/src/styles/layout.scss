@@ -5,16 +5,16 @@
   position: relative;
 
   @include xl {
-    background-color: red;
+    // background-color: red;
   }
   @include lg {
-    background-color: blue;
+    // background-color: blue;
   }
   @include md {
-    background-color: green;
+    // background-color: green;
   }
   @include sm {
-    background-color: yellow;
+    // background-color: yellow;
   }
   // .left,
   // .right {

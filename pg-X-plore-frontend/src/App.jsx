@@ -12,6 +12,7 @@ import ListPage from "./pages/ListPage/ListPage";
 import SinglePage from "./pages/SinglePage/SinglePage";
 import Layout from "./pages/Layout/Layout";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
         {
           path: "/login",
           element: <LoginPage />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
         },
       ],
     },

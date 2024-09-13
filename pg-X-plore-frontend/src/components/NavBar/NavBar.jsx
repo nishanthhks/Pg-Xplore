@@ -1,45 +1,65 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./NavBar.scss";
 
+import Profile from "../../pages/Profile/Profile";
 import Menu from "../../assets/icons/Menu";
 import X from "../../assets/icons/X";
+import Logo from "../../assets/icons/Logo";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+
+  const user = false;
 
   return (
     <>
       <nav>
         {/* logo */}
         <div className="logo">
-          <a href="/">pg-x-plore</a>
+          <Link to="/" className="logo-container" >
+            <Logo /> <span className="anton-regular">pg X plore</span>
+          </Link>
         </div>
 
         {/* page links */}
         <div className="page-links">
-          <a href="/" className="links">
+          <Link to="/" className="links">
             home
-          </a>
-          <a href="/" className="links">
+          </Link>
+          <Link to="/" className="links">
             about
-          </a>
-          <a href="/" className="links">
+          </Link>
+          <Link to="/" className="links">
             contact
-          </a>
-          <a href="/" className="links">
+          </Link>
+          <Link to="/" className="links">
             agents
-          </a>
+          </Link>
         </div>
 
         {/* loging */}
         <div className="signup-signin">
-          <a href="/" className="sign-up">
-            sign up
-          </a>
-          <a href="/" className="sign-in">
-            sign in
-          </a>
+          {user ? (
+            <>
+              <Link to="/" className="user">
+                nishu
+              </Link>
+              <Link to="/profile" className="profile-link">
+                profile
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/" className="sign-up">
+                sign up
+              </Link>
+              <Link to="/" className="sign-in">
+                sign in
+              </Link>
+            </>
+          )}
         </div>
         <div className="menu" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
@@ -47,25 +67,25 @@ export default function NavBar() {
       </nav>
       <section className={`side-bar ${open ? "visible" : "not-visible"}`}>
         {/* <section className="side-bar"> */}
-        <a href="/" className="links">
+        <Link to="/" className="links">
           home
-        </a>
-        <a href="/" className="links">
+        </Link>
+        <Link to="/" className="links">
           about
-        </a>
-        <a href="/" className="links">
+        </Link>
+        <Link to="/" className="links">
           contact
-        </a>
-        <a href="/" className="links">
+        </Link>
+        <Link to="/" className="links">
           agents
-        </a>
+        </Link>
 
-        <a href="/" className="sign-up">
+        <Link to="/" className="sign-up">
           sign up
-        </a>
-        <a href="/" className="sign-in">
+        </Link>
+        <Link to="/" className="sign-in">
           sign in
-        </a>
+        </Link>
       </section>
     </>
   );

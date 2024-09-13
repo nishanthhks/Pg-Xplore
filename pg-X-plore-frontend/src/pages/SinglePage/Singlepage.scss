@@ -8,7 +8,7 @@
   top: 30px;
   gap: 10px;
   padding: 10px 100px;
-  gap: 10px;
+
 
   @include lg {
     padding: 10px 20px;
@@ -41,9 +41,6 @@
       background-color: #e9c9c9;
       border-radius: 5px;
       max-height: 50%;
-      
-      
-      
 
       @include md {
         flex: initial;
@@ -54,7 +51,7 @@
     .description {
       flex: 5;
     
-      background-color: #e0e0e0;
+      background-color: #594242;
       border-radius: 5px;
       padding: 10px 30px;
       font-size: clamp(0.60rem, 1vw, 0.9rem);

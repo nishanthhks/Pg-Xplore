@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.scss";
 import Search from "../../assets/icons/Search";
+import "../../styles/colors.scss"
 
 export default function SearchBar() {
   const [searchData, setSearchData] = useState({
@@ -17,7 +18,7 @@ export default function SearchBar() {
 
   return (
     <section className="search-bar">
-      {/*  */}
+    
       <div className="types">
         {types.map((type) => (
           <button
@@ -50,7 +51,7 @@ export default function SearchBar() {
         />
         {/* stay arent */}
         <div className="search-button">
-          <Search />
+          <Search  color="rgb(20, 61, 123)"/>
         </div>
       </form>
     </section>

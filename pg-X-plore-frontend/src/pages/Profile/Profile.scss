@@ -1,0 +1,64 @@
+@import "../../styles/responsive.scss";
+@import "../../styles/colors.scss";
+
+.profile-section {
+  background-color: rgb(255, 255, 158);
+  // background-color: $non-photo-blue;
+  display: flex;
+  padding: 30px 60px 50px 0px;
+  height: 90dvh;
+  position: relative;
+
+  .information-section {
+    width: 55%;
+    border: 2px solid black;
+    overflow-y: scroll;
+    height: 85dvh;
+    position: fixed;
+    top: 100px;
+    left: 30px;
+    padding: 10px 10px;
+    // background-color: black;
+
+    .user-information {
+      border: 2px solid black;
+
+      .user-heading {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+
+      .user-bio {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+        img {
+          height: 100px;
+          width: 100px;
+          object-fit: cover;
+        }
+        .user-data {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  .messages-section {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    border: 2px solid black;
+    width: 40%;
+    height: 85dvh;
+  }
+}
+
+.list-heading,
+.saved-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}

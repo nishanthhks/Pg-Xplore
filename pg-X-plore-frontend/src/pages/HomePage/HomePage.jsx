@@ -9,17 +9,17 @@ export default function HomePage() {
     <>
       <div className="left"></div>
       <div className="right"></div>
-      {/* <NavBar /> */}
-      <div
+  
+      {/* <div
         style={{
           position: "relative",
           zIndex: "10",
           display: "flex",
           flexDirection: "column",
-        }}>
+        }} className="home-page"> */}
         <Heading />
         <SearchBar />
-      </div>
+      {/* </div> */}
     </>
   );
 }

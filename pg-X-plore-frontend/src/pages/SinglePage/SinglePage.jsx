@@ -57,6 +57,8 @@ function Heading({ data, userData }) {
         <span>{data.address}</span>
         <span>₹{data.price}</span>
       </div>
+      <button>message</button>
+      <button>save</button>
       <div className="profile">
         <img src={userData.img} alt="profilr" />
         <span>{userData.name}</span>
