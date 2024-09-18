@@ -1,5 +1,5 @@
 import React from "react";
-const Search = ({ size = 35, color = "#000000" }) => (
+const Search = ({ size = 40, color = "#000000" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -7,7 +7,7 @@ const Search = ({ size = 35, color = "#000000" }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth="1.5"
+    strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="arcs">
     <circle cx="11" cy="11" r="8"></circle>

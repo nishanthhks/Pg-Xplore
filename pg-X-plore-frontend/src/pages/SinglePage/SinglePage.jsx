@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Singlepage.scss";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import ArrowUp from "../../assets/icons/ArrowUp";
@@ -6,6 +6,9 @@ import ArrowUp from "../../assets/icons/ArrowUp";
 import { singlePostData } from "../../lib/dummyData";
 import { userData } from "../../lib/dummyData";
 import Map from "../../components/Map/Map";
+import BookMarkSave from "../../assets/icons/BookMarkSave";
+import BookMarkNotSave from "../../assets/icons/BookMarkNotSave";
+import MessageCircle from "../../assets/icons/MessageCircle";
 
 export default function SinglePage() {
   const data = singlePostData;
@@ -50,6 +53,8 @@ export default function SinglePage() {
 }
 
 function Heading({ data, userData }) {
+  const [save, setSave] = useState(false);
+
   return (
     <div className="heading">
       <div className="title">
@@ -57,8 +62,17 @@ function Heading({ data, userData }) {
         <span>{data.address}</span>
         <span>₹{data.price}</span>
       </div>
-      <button>message</button>
-      <button>save</button>
+      <div className="contact">
+        <button>
+          <MessageCircle />
+        </button>
+        <button
+          onClick={() => {
+            setSave((prev) => !prev);
+          }}>
+          {save ? <BookMarkSave /> : <BookMarkNotSave />}
+        </button>
+      </div>
       <div className="profile">
         <img src={userData.img} alt="profilr" />
         <span>{userData.name}</span>

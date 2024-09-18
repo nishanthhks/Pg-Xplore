@@ -20,7 +20,7 @@ export default function Filter() {
           placeholder="Enter Location"
         />
         <div className="search-button">
-          <Search />
+          <Search  color="rgb(20, 61, 123)"/>
         </div>
       </div>
 

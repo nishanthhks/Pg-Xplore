@@ -20,12 +20,12 @@ export default function ImageSlider({ images }) {
   return (
     <div className="slider-container">
       <div className="big-image">
-        <div className="arrow" onClick={prevSlide}>
+        <div className="arrow arrow-left" onClick={prevSlide}>
           <ArrowUp />
         </div>
         <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
 
-        <div className="arrow" onClick={prevSlide}>
+        <div className="arrow arrow-right" onClick={prevSlide}>
           <ArrowUp />
         </div>
       </div>

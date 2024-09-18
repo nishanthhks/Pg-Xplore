@@ -1,14 +1,14 @@
 @import "../../styles/responsive.scss";
+@import "../../styles/colors.scss";
 .single-page {
   width: 100%;
-  background-color: #ffffff;
+  background-color: $yellow-1-dark;
   height: 85dvh;
   display: flex;
   position: relative;
-  top: 30px;
+  top: 10px;
   gap: 10px;
-  padding: 10px 100px;
-
+  padding: 10px 80px;
 
   @include lg {
     padding: 10px 20px;
@@ -23,7 +23,8 @@
 
   .left-container {
     width: 50%;
-    border: 2px solid rgb(0, 0, 0);
+    border: 4px solid $blue-3;
+    background-color: $white-1;
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -38,9 +39,12 @@
 
     .image-wrapper {
       flex: 4;
-      background-color: #e9c9c9;
+      background-color: white;
+      box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+        rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
       border-radius: 5px;
-      max-height: 50%;
+      height: 60%;
+      padding: 5px;
 
       @include md {
         flex: initial;
@@ -50,13 +54,13 @@
 
     .description {
       flex: 5;
-    
-      background-color: #594242;
+
+      background-color: $blue-1;
+      box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+        rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
       border-radius: 5px;
       padding: 10px 30px;
-      font-size: clamp(0.60rem, 1vw, 0.9rem);
-
-
+      font-size: clamp(0.6rem, 1.5vw, 1.8rem);
 
       @include md {
         flex: initial;
@@ -68,7 +72,8 @@
 
   .right-container {
     width: 50%;
-    border: 2px solid black;
+    border: 4px solid $blue-3;
+    background-color: $white-1;
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -82,8 +87,11 @@
 
     .location {
       flex: 5;
-      background-color: #b0b0b0;
-      border-radius: 5px;
+      background-color: white;
+      box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+        rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
+      border-radius: 10px;
+      padding: 5px;
       position: relative;
 
       @include md {
@@ -95,7 +103,6 @@
 }
 
 .icon {
-  // background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,10 +111,13 @@
 
 .heading {
   flex: 2;
-  background-color: #f0f0f0;
+  background-color: $yellow-2;
+  box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+    rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
   border-radius: 5px;
-  padding: 10px 30px;
-
+  border: 4px solid $blue-3;
+  padding: 10px 10px;
+  gap: 5px;
   display: flex;
   justify-content: space-between;
 
@@ -117,26 +127,52 @@
 
   @include md {
     flex: initial;
-    // height: 100px;
   }
 
   .title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(213, 213, 213);
-    width: 50%;
-    padding: 0px 10px;
-  }
+    box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+      rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
+    border-radius: 5px;
+    background-color: $yellow-1-dark;
+    // width: 55%;
+    padding: 5px 10px;
+    text-align: center;
 
+    span {
+      font-size: 0.8rem;
+      
+    }
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+
+    button {
+      height: 40px;
+      width: 40px;
+      border: none;
+      box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+        rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
+      border-radius: 5px;
+      background-color: $white-1;
+    }
+  }
   .profile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(213, 213, 213);
-    width: 25%;
-    // padding: 0;
+    box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+      rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
+    border-radius: 5px;
+    background-color: $yellow-1-dark;
+    // width: 25%;
+    padding: 5px 10px;
 
     img {
       object-fit: cover;
@@ -144,11 +180,13 @@
       width: 40px;
       border-radius: 50%;
     }
+    span{
+      text-align: center;
+    }
   }
 }
 
 .general-details {
-  
   flex: 4;
   background-color: #e8e8e8;
   border-radius: 5px;
@@ -156,9 +194,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px 30px;
-
-
+  padding: 10px 10px;
+  background-color: white;
+  box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+    rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
 
   @include md {
     flex: initial;
@@ -169,14 +208,20 @@
     display: flex;
     align-content: center;
     // background-color: yellow;
+
+    div {
+      font-size: 0.8rem;
+    }
   }
 }
 
 .room-details {
   flex: 1;
-  background-color: #dcdcdc;
+  background-color: white;
+  box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+    rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
   border-radius: 5px;
-  padding: 10px 30px;
+  padding: 10px 10px;
   display: flex;
   flex-direction: column;
 
@@ -186,28 +231,31 @@
 
     .room-list {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       // background-color: yellow;
+      div {
+        font-size: 0.9rem;
+      }
     }
   }
 
   @include md {
     flex: initial;
-    height: 100px;
+    height: 80px;
   }
 }
 
 .near-places-details {
   flex: 1;
-  background-color: #e8e8e8;
+  background-color: white;
+  box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
+    rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;
   border-radius: 5px;
-
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
-  padding: 10px 30px;
+  padding: 10px 10px;
   .place-container {
     display: flex;
 
@@ -223,6 +271,15 @@
       align-content: center;
       // background-color: yellow;
     }
+    .place-list-desc {
+      * {
+        font-size: 0.8rem;
+      }
+    }
   }
 }
 
+.icon{
+  // background-color: red;
+  padding: 5px;
+}

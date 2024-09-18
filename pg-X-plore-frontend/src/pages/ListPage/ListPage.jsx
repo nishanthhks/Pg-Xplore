@@ -11,10 +11,11 @@ import ArrowUp from "../../assets/icons/ArrowUp";
 export default function ListPage() {
   let data = listData;
   const [expand, setExpand] = useState(false);
+  
   // console.log(data);
   return (
     <>
-      <div className="listPage">
+      {/* <div className="listPage"> */}
         <div className="page-container">
           <div className="listContainer">
 
@@ -38,7 +39,7 @@ export default function ListPage() {
             <Map data={data} />
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }
