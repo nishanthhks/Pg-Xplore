@@ -1,13 +1,13 @@
 @import "../../styles/responsive.scss";
 @import "../../styles/colors.scss";
-.login {
+.register {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   //   background-color: $white-1;
 
-  .login-formContainer {
+  .register-formContainer {
     background-color: white;
     box-shadow: rgba(54, 112, 211, 0.25) 0px 4px 8px -2px,
       rgba(49, 76, 122, 0.093) 0px 0px 0px 1px;

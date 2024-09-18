@@ -13,6 +13,7 @@ import SinglePage from "./pages/SinglePage/SinglePage";
 import Layout from "./pages/Layout/Layout";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import Profile from "./pages/Profile/Profile";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -43,6 +44,10 @@ function App() {
         {
           path: "/profile",
           element: <Profile />,
+        },
+        {
+          path: "/register",
+          element: <RegisterPage />,
         },
       ],
     },

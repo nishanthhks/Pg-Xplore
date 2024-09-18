@@ -18,7 +18,7 @@ export default function NavBar() {
       <nav>
         {/* logo */}
         <div className="logo">
-          <Link to="/" className="logo-container" >
+          <Link to="/" className="logo-container">
             <Logo /> <span className="anton-regular">pg X plore</span>
           </Link>
         </div>
@@ -52,10 +52,10 @@ export default function NavBar() {
             </>
           ) : (
             <>
-              <Link to="/" className="sign-up">
+              <Link to="/register" className="sign-up">
                 sign up
               </Link>
-              <Link to="/" className="sign-in">
+              <Link to="/login" className="sign-in">
                 sign in
               </Link>
             </>
