@@ -1,0 +1,46 @@
+@import "../../styles/responsive.scss";
+@import "../../styles/colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Ribeye+Marrow&display=swap');
+
+
+.headings {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  height: 350px;
+  width: 60%;
+  border: 4px solid $yellow-1-dark;
+  background-color: $yellow-1;
+  border-radius: 5px;
+  @include lg {
+    width: 55%;
+  }
+  @include md {
+    width: 80%;
+    left: 0px;
+    top: 20px;
+    margin: 0 auto;
+  }
+  @include sm{
+    left: 0px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  div{
+    font-size: 2.5rem;
+    padding: 20px;
+    color: rgb(117, 39, 0);
+    // background-color: yellow;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.ribeye-marrow-regular {
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 400;
+  font-style: normal;
+}

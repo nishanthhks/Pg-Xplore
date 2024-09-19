@@ -1,0 +1,112 @@
+@import "../../styles/responsive.scss";
+@import "../../styles/colors.scss";
+
+.profile-section {
+  // background-color: rgb(255, 255, 158);
+  background-color: $yellow-1-dark;
+  display: flex;
+  padding: 30px 60px 50px 0px;
+  height: 85dvh;
+  position: relative;
+  top: 10px;
+  gap: 10px;
+  padding: 10px 80px;
+
+  .information-section {
+    width: 55%;
+    border: 4px solid $blue-3;
+    border-radius: 10px;
+    overflow-y: scroll;
+
+    position: relative;
+    top: 0px;
+    // left: 30px;
+    padding: 5px;
+    background-color: $white-1;
+    @include lg {
+      width: 55%;
+    }
+
+    @include md {
+      width: 100%;
+      margin-right: 20px;
+    }
+
+    .user-information {
+      border: 4px solid $blue-3;
+      background-color: $purple-1;
+      border-radius: 10px;
+
+      .user-heading {
+      
+        padding-top: 5px;
+        text-decoration: underline;
+        h3 {
+          padding-left: 50px;
+          font-size: 2rem;
+        }
+      }
+
+      .user-bio {
+        display: flex;
+        justify-content: start;
+        gap: 60px;
+        padding: 10px 60px;
+        // padding-left: 20px;
+        img {
+          height: 100px;
+          width: 100px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+        .user-data {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          font-size: 1.1rem;
+        }
+        .edit-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .logout {
+            height: 100%;
+            background-color: red;
+            border: 4px solid $blue-3;
+            padding: 5px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            // color: white;
+          }
+
+          .update-profile {
+            background-color: $yellow-2;
+            border: 4px solid $blue-3;
+            padding: 5px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .messages-section {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    border: 2px solid black;
+    width: 40%;
+    height: 85dvh;
+  }
+}
+
+.list-heading,
+.saved-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
