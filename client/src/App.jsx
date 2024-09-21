@@ -10,7 +10,7 @@ import "./styles/layout.scss";
 import HomePage from "./pages/HomePage/HomePage";
 import ListPage from "./pages/ListPage/ListPage";
 import SinglePage from "./pages/SinglePage/SinglePage";
-import Layout from "./pages/Layout/Layout";
+import { Layout, RequireAuth } from "./pages/Layout/Layout";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import Profile from "./pages/Profile/Profile";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -41,13 +41,20 @@ function App() {
           path: "/login",
           element: <LoginPage />,
         },
-        {
-          path: "/profile",
-          element: <Profile />,
-        },
+
         {
           path: "/register",
           element: <RegisterPage />,
+        },
+      ],
+    },
+    {
+      path: "/",
+      element: <RequireAuth />,
+      children: [
+        {
+          path: "/profile",
+          element: <Profile />,
         },
       ],
     },

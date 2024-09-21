@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./Profile.scss";
 import Card from "../../components/Card/Card";
 import { listData, userData } from "../../lib/dummyData";
 import List from "../../components/List/List";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Profile() {
   let data = listData;
 
   const navigate = useNavigate();
+
+  const { updateUser, currentUser } = useContext(AuthContext);
+
+  // useEffect(() => {
+  //   if (!currentUser) {
+  //     navigate("/login");
+  //   }
+  // }, [currentUser]);
 
   const handleLogout = async () => {
     try {
@@ -20,8 +29,11 @@ export default function Profile() {
           withCredentials: true, // Ensure cookies are sent and received
         }
       );
+
       console.log(res);
-      localStorage.removeItem("user"); // Remove user data from local storage
+      // localStorage.removeItem("user"); // Remove user data from local storage
+      updateUser(null);
+
       navigate("/"); // Redirect after logout
     } catch (error) {
       console.log(error);
@@ -29,6 +41,7 @@ export default function Profile() {
   };
 
   return (
+    // currentUser && (
     <>
       <div className="profile-section">
         <div className="information-section">
@@ -40,11 +53,14 @@ export default function Profile() {
             <div className="user-bio">
               <img src={userData.img} alt="" />
               <div className="user-data">
-                <span>username: johndo</span> <span>email: john@gmail.com</span>
+                <span>username: {currentUser.username}</span>{" "}
+                <span>email: {currentUser.email}</span>
               </div>
               <div className="edit-buttons">
                 <button className="update-profile">update profile</button>
-                <button onClick={handleLogout} className="logout">logout</button>
+                <button onClick={handleLogout} className="logout">
+                  logout
+                </button>
               </div>
             </div>
           </div>
@@ -70,5 +86,6 @@ export default function Profile() {
         <div className="messages-section"></div>
       </div>
     </>
+    // )
   );
 }

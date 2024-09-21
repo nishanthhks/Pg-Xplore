@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./loginPage.scss";
 import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function LoginPage() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const { updateUser } = useContext(AuthContext);
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +33,8 @@ export default function LoginPage() {
         }
       );
       console.log(res);
-      localStorage.setItem("user", JSON.stringify(res.data));
+      // localStorage.setItem("user", JSON.stringify(res.data));
+      updateUser(res.data);
       navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "An unexpected error occurred");

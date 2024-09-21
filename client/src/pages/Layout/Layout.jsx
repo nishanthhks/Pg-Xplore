@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 // import HomePage from "../HomePage/HomePage";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import "./layout.scss";
-
-export default function Layout() {
+import { AuthContext } from "../../context/AuthContext";
+function Layout() {
   return (
     <>
       <NavBar />
@@ -14,3 +14,27 @@ export default function Layout() {
     </>
   );
 }
+
+function RequireAuth() {
+  const { currentUser } = useContext(AuthContext);
+
+  // useEffect(() => {
+  //   if (!currentUser) {
+  //     // navigate("/login");
+  //     <Navigate to="/login" />;
+  //   }
+  // }, [currentUser]);
+
+  return (
+    !currentUser ? <Navigate to="/login" /> : (
+      <>
+        <NavBar />
+        <div className="content">
+          <Outlet />
+        </div>
+      </>
+    )
+  );
+};
+
+export { Layout, RequireAuth };

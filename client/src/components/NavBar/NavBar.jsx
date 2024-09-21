@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./NavBar.scss";
@@ -7,11 +7,14 @@ import Profile from "../../pages/Profile/Profile";
 import Menu from "../../assets/icons/Menu";
 import X from "../../assets/icons/X";
 import Logo from "../../assets/icons/Logo";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
-  const user = false;
+  const { currentUser } = useContext(AuthContext);
+
+  // const user = false;
 
   return (
     <>
@@ -41,12 +44,12 @@ export default function NavBar() {
 
         {/* loging */}
         <div className="signup-signin">
-          {user ? (
+          {currentUser ? (
             <>
-              <Link to="/" className="user">
-                nishu
+              <Link to="/" className="user sign-up">
+                {currentUser.username}
               </Link>
-              <Link to="/profile" className="profile-link">
+              <Link to="/profile" className="profile-link sign-in">
                 profile
               </Link>
             </>
