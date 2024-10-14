@@ -61,7 +61,7 @@ export default function LoginPage() {
               placeholder="Password"
               required
             />
-            <button disabled={isLoading}>Login</button>
+            <button disabled={isLoading}>{isLoading ? "loading..." : "Login"}</button>
             {error && <span className="error">{error}</span>}
             <Link to="/register" className="redirect">
               new here ? register

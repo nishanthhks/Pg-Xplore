@@ -41,7 +41,6 @@ export default function Profile() {
   };
 
   return (
-    // currentUser && (
     <>
       <div className="profile-section">
         <div className="information-section">
@@ -86,6 +85,5 @@ export default function Profile() {
         <div className="messages-section"></div>
       </div>
     </>
-    // )
   );
 }

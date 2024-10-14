@@ -1,5 +1,5 @@
 import React from "react";
-import "./filter.scss";
+import "./Filter.scss";
 import Search from "../../assets/icons/Search";
 
 export default function Filter() {

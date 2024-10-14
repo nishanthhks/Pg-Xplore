@@ -27,7 +27,7 @@ function RegisterPage() {
       });
       navigate("/login");
     } catch (err) {
-        setError(err.response?.data?.message || "An unexpected error occurred");
+      setError(err.response?.data?.message || "An unexpected error occurred");
     } finally {
       setIsLoading(true);
     }
@@ -42,7 +42,9 @@ function RegisterPage() {
             <input name="username" type="text" placeholder="Username" />
             <input name="email" type="text" placeholder="Email" />
             <input name="password" type="password" placeholder="Password" />
-            <button disabled={isLoading}>Register</button>
+            <button disabled={isLoading}>
+              {isLoading ? "loading..." : "Register"}
+            </button>
             {error && <span className="error">{error}</span>}
             <Link to="/login" className="redirect">
               Do you have an account? Login

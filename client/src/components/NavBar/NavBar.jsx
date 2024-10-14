@@ -68,6 +68,7 @@ export default function NavBar() {
           {open ? <X /> : <Menu />}
         </div>
       </nav>
+      
       <section className={`side-bar ${open ? "visible" : "not-visible"}`}>
         {/* <section className="side-bar"> */}
         <Link to="/" className="links">
