@@ -4,7 +4,7 @@ import Card from "../../components/Card/Card";
 import { listData, userData } from "../../lib/dummyData";
 import List from "../../components/List/List";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Profile() {
@@ -14,11 +14,6 @@ export default function Profile() {
 
   const { updateUser, currentUser } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   if (!currentUser) {
-  //     navigate("/login");
-  //   }
-  // }, [currentUser]);
 
   const handleLogout = async () => {
     try {
@@ -56,7 +51,7 @@ export default function Profile() {
                 <span>email: {currentUser.email}</span>
               </div>
               <div className="edit-buttons">
-                <button className="update-profile">update profile</button>
+                <Link to={"/profile/update"}><button className="update-profile">update profile</button></Link>
                 <button onClick={handleLogout} className="logout">
                   logout
                 </button>
@@ -77,7 +72,9 @@ export default function Profile() {
           <div className="saved">
             <div className="saved-heading">
               <h3>saved</h3>
-              <button>update profile</button>
+              <Link to="/profile/update">
+                <button>update profile</button>
+              </Link>
             </div>
             <List />
           </div>

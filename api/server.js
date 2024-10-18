@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import postRoute from "./routes/post.route.js";
 import authRoute from "./routes/auth.route.js";
 import testRoute from "./routes/test.route.js";
+import userRoute from "./routes/user.route.js";
 import cors from "cors";
 
 const app = express();
@@ -24,6 +25,7 @@ dotenv.config(); // Load environment variables from the .env file
 app.use("/api/posts", postRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/test", testRoute);
+app.use("/api/user", userRoute);
 
 app.listen(8800, () => {
   console.log("server listenings");
