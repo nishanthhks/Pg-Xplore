@@ -14,7 +14,6 @@ export default function Profile() {
 
   const { updateUser, currentUser } = useContext(AuthContext);
 
-
   const handleLogout = async () => {
     try {
       const res = await axios.post(
@@ -45,13 +44,15 @@ export default function Profile() {
               <h3>User Information</h3>
             </div>
             <div className="user-bio">
-              <img src={userData.img} alt="" />
+              <img src={currentUser.avatar || userData.img} alt="" />
               <div className="user-data">
                 <span>username: {currentUser.username}</span>{" "}
                 <span>email: {currentUser.email}</span>
               </div>
               <div className="edit-buttons">
-                <Link to={"/profile/update"}><button className="update-profile">update profile</button></Link>
+                <Link to={"/profile/update"}>
+                  <button className="update-profile">update profile</button>
+                </Link>
                 <button onClick={handleLogout} className="logout">
                   logout
                 </button>
