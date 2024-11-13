@@ -64,7 +64,10 @@ export default function Profile() {
           <div className="list">
             <div className="list-heading">
               <h3>List</h3>
-              <button>create post</button>
+              <Link to="/add">
+                {" "}
+                <button>create post</button>
+              </Link>
             </div>
             <List />
           </div>
